@@ -52,6 +52,19 @@ export default function RootLayout({
             gtag('config', 'AW-810525438');
           `}
         </Script>
+
+           {/* Custom Form Submit Event */}
+        <Script id="form-submit-event">
+          {`
+            function trackFormSubmit() {
+              gtag('event', 'form_submit', {
+                event_category: 'Form',
+                event_label: 'Contact Form',
+                value: 1
+              });
+            }
+          `}
+        </Script>
       </head>
 
       <body className={open.className}>{children}</body>
