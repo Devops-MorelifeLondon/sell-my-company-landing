@@ -8,7 +8,8 @@ const open = Open_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'UK Nominee Director Services for Non-Residents | Leadforce',
-  description: 'Set up your UK limited company with confidence. Leadforce provides Nominee Director appointment, incorporation support, bank account setup and full compliance for non-UK residents',
+  description:
+    'Set up your UK limited company with confidence. Leadforce provides Nominee Director appointment, incorporation support, bank account setup and full compliance for non-UK residents',
 }
 
 export default function RootLayout({
@@ -20,10 +21,14 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="robots" content="noindex, nofollow" />
-        <link rel="preload" as="document" href="https://form.jotform.com/252543224958462" />
+        <link
+          rel="preload"
+          as="document"
+          href="https://form.jotform.com/252543224958462"
+        />
 
-        {/* Microsoft Clarity Script */}
-        <Script id="clarity" >
+        {/* ✅ Microsoft Clarity Script */}
+        <Script id="clarity" strategy="beforeInteractive">
           {`
             (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -33,7 +38,22 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* ✅ Google Tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-810525438"
+          strategy="afterInteractive"
+        />
+        <Script id="google-gtag" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-810525438');
+          `}
+        </Script>
       </head>
+
       <body className={open.className}>{children}</body>
     </html>
   )
