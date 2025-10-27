@@ -42,7 +42,7 @@ export default function RootLayout({
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-810525438"
-          strategy="afterInteractive"
+         
         />
         <Script id="google-gtag" strategy="beforeInteractive">
           {`
@@ -52,6 +52,20 @@ export default function RootLayout({
             gtag('config', 'AW-810525438');
           `}
         </Script>
+
+         {/* Google tag (gtag.js) */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-4BYH9DDQVR"
+      />
+      <Script id="google-analytics" strategy="beforeInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4BYH9DDQVR');
+        `}
+      </Script>
 
            {/* Custom Form Submit Event */}
         <Script id="form-submit-event">
